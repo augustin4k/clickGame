@@ -4,7 +4,7 @@
 
 ### Installation
 
-Make sure you have Node.js and npm installed on your machine.
+Make sure you have Node.js and npm installed on your machine. After that in the folder of project run:
 
 ```bash
 npm install
