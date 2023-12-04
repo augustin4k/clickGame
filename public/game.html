@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Race Game</title>
+    <style>
+        body {
+            margin-top: 12px;
+            overflow: hidden;
+        }
+
+        .game-area {
+            position: relative;
+            width: 100vw;
+        }
+
+        span {
+            position: absolute;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .collect {
+            background-color: green;
+        }
+
+        .avoid {
+            border-radius: 50%;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button-container d-flex justify-content-between mx-5">
+        <button class="btn btn-primary" id="counter">Start game</button>
+        <button class="btn btn-light" id="chronometer" disabled="true">Time: 0</button>
+    </div>
+    <div id='showDashboard' class="d-none m-5">
+        <h5 class="text-center">Top 5 best players:</h5>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Time</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div id='showForm' class="flex-column align-items-center gap-3 d-none">
+        <h5>
+            Add your score
+        </h5>
+        <form>
+            <div class="form-group">
+                <label for="name">Your name</label>
+                <input type="text" class="form-control" name='name' id="name" required placeholder="Your name...">
+            </div>
+            <div class="form-group">
+                <label for="score">Your score</label>
+                <input type="text" class="form-control" name='score' id="score" placeholder="Your score...">
+            </div>
+            <div class="form-group">
+                <label for="time">Your time</label>
+                <input type="text" class="form-control" name='time' id="time" placeholder="Your time...">
+            </div>
+            <button type="submit" class="btn btn-primary">Add in dashboard</button>
+        </form>
+
+    </div>
+    <div id="game-area"></div>
+</body>
+
+    <!-- space for logic script -->
+    <script type="module">
+        import Game from './classes/GameClass.js'
+        new Game();
+    </script>
+</html>
